@@ -1,2 +1,2 @@
-# base-pattern
-The most basic pattern for node projects
+# Backpack Factory - Base Pattern
+> The most basic pattern for node projects
