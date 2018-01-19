@@ -1,11 +1,10 @@
 const path = require('path')
-const webpack = require('webpack')
 
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = {
-  target: 'node',
   webpack: {
+    target: 'node',
     entry: './src/main.js',
     output: {
       filename: '[name].js',
@@ -33,13 +32,12 @@ module.exports = {
     },
     devtool: 'source-map',
     performance: { hints: false },
-    plugins: [
-      new webpack.NoEmitOnErrorsPlugin()
-    ]
+    plugins: []
   },
-  updateConfig (config) {
+  updateConfig (config, webpack) {
     config.webpack.output.path = path.resolve('build')
     config.webpack.plugins.unshift(
+      new webpack.NoEmitOnErrorsPlugin(),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify(config.env),
         '__DEV__': config.env === 'development'
