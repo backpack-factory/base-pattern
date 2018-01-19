@@ -2,8 +2,8 @@ const path = require('path')
 
 module.exports = function (config, webpack) {
   const nodeModules = config.paths.patterns.map(p => path.join(p, 'node_modules'))
-  config.webpack.resolve.push(...nodeModules)
-  config.webpack.resolveLoader.push(...nodeModules)
+  config.webpack.resolve.modules.push(...nodeModules)
+  config.webpack.resolveLoader.modules.push(...nodeModules)
 
   const compiler = webpack(config.webpack)
   compiler.run((error, stats) => {

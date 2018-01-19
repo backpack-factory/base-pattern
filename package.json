@@ -6,6 +6,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "json-loader": "^0.5.7",
     "nodemon": "^1.14.10",
-    "ramda": "^0.25.0"
+    "ramda": "^0.25.0",
+    "webpack": "^3.10.0"
   }
 }
